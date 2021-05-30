@@ -70,6 +70,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   stopServer() {
     this.serverSubscription.unsubscribe();
+    this.serverSubscription = null;
   }
 
   ngOnDestroy() {
