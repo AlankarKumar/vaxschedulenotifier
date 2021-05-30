@@ -37,8 +37,6 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild(MatSelect) input: MatSelect;
 
   ngOnInit() {
-    navigator.serviceWorker.register('sw.js');
-
     this.states = this.appService.getStates();
     this.emailFormControl = new FormControl('', [Validators.required]);
     this.districtFormControl = new FormControl(
@@ -64,10 +62,6 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   startServer() {
     if (this.pushNotification.permission !== 'granted') {
       this.pushNotification.requestPermission();
-    } else {
-      navigator.serviceWorker.ready.then((registration) => {
-        registration.showNotification('Notificaion from Serverice worker');
-      });
     }
     this.serverSubscription = this.appService
       .startServer(this.selectedDistrict)
