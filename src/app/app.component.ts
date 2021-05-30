@@ -59,7 +59,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     this.selectedDistrict = $event.value;
   }
 
-  onClick() {
+  startServer() {
     this.pushNotification.requestPermission();
     // let options = {
     //   body: 'Slots available in your area.',
@@ -69,6 +69,10 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     this.serverSubscription = this.appService
       .startServer(this.selectedDistrict)
       .subscribe(console.log);
+  }
+
+  stopServer() {
+    this.serverSubscription.unsubscribe();
   }
 
   ngOnDestroy() {

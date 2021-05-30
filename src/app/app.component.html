@@ -39,7 +39,7 @@
     <button
       mat-flat-button
       color="primary"
-      (click)="onClick()"
+      (click)="startServer()"
       [disabled]="!selectedDistrict"
     >
       Start Notification Server
@@ -49,8 +49,8 @@
     <button
       mat-flat-button
       color="primary"
-      (click)="onClick()"
-      [disabled]="!selectedDistrict"
+      (click)="stopServer()"
+      [disabled]="!serverSubscription"
     >
       Stop Notification Server
     </button>

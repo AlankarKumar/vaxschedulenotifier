@@ -2,6 +2,7 @@
 
 .example-form {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   min-width: 35rem;
   max-width: 40rem;
@@ -17,6 +18,7 @@
   height: 100vh;
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
@@ -49,6 +51,7 @@ button {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   width: 100%;
 }
@@ -74,7 +77,6 @@ button {
 .footer-items {
   display: flex;
   align-items: center;
-  flex-wrap: nowrap;
   min-width: 13%;
 }
 

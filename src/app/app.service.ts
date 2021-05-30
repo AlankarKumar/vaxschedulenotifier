@@ -78,15 +78,20 @@ export class AppService {
         )
       ),
       switchMap((data: Center[]) => {
-        const message = `${data.length} centers found @ ${data[0].name} located at ${data[0].address}`;
+        const message =
+          data.length > 0
+            ? `${data.length} centers found @ ${data[0]?.name} located at ${data[0]?.address}`
+            : `Please wait for next notification...`;
         let options = {
           body: message,
           icon: 'assets/cowin.jpeg',
         };
-        return this.pushNotification.create(
-          `@ ${data[0].name} located at ${data[0].address}`,
-          options
-        );
+        return data.length > 0
+          ? this.pushNotification.create(
+              `@ ${data[0].name} located at ${data[0].address}`,
+              options
+            )
+          : this.pushNotification.create(`No Centers Found`, options);
       })
     );
   }
