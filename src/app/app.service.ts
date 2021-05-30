@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { PushNotificationsService } from 'ng-push-ivy';
-import { Observable, timer } from 'rxjs';
-import { filter, map, switchMap } from 'rxjs/operators';
+import { Observable, of, timer } from 'rxjs';
+import { catchError, filter, map, switchMap } from 'rxjs/operators';
 import {
   Center,
   RootObject,
@@ -50,7 +50,8 @@ export class AppService {
                 (session: Session) => session.available_capacity > 0
               ).length > 0
           )
-        )
+        ),
+        catchError((err) => of(err))
       );
   }
 
@@ -70,7 +71,7 @@ export class AppService {
 
   startServer(district_id) {
     const date = new Date();
-    return timer(1, 6000).pipe(
+    return timer(1, 900000).pipe(
       switchMap(() =>
         this.getCenterByDistrict(
           district_id,

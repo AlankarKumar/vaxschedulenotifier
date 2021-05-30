@@ -37,6 +37,10 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild(MatSelect) input: MatSelect;
 
   ngOnInit() {
+    confirm(
+      `This site requires you to allow Notification when asked for! Do not worry we won't spam you`
+    );
+    this.pushNotification.requestPermission();
     this.states = this.appService.getStates();
     this.emailFormControl = new FormControl('', [Validators.required]);
     this.districtFormControl = new FormControl(
