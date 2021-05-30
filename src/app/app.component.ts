@@ -62,10 +62,11 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   startServer() {
     if (this.pushNotification.permission !== 'granted') {
       this.pushNotification.requestPermission();
+    } else {
+      this.serverSubscription = this.appService
+        .startServer(this.selectedDistrict)
+        .subscribe();
     }
-    this.serverSubscription = this.appService
-      .startServer(this.selectedDistrict)
-      .subscribe();
   }
 
   stopServer() {
