@@ -60,15 +60,12 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   startServer() {
-    this.pushNotification.requestPermission();
-    // let options = {
-    //   body: 'Slots available in your area.',
-    //   icon: 'assets/cowin.jpeg',
-    // };
-    // this.pushNotification.create('IRON MAN', options).subscribe();
+    if (this.pushNotification.permission !== 'granted') {
+      this.pushNotification.requestPermission();
+    }
     this.serverSubscription = this.appService
       .startServer(this.selectedDistrict)
-      .subscribe(console.log);
+      .subscribe();
   }
 
   stopServer() {
