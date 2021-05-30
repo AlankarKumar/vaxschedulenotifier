@@ -12,6 +12,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 4. Adding Dose 1 & Dose 2 availability
 5. Adding a Vaccine Type Search Functionality
 6. Adding a paid/ Free vaccine Search Functionality
+7. Transforming into progressive Web App
+8. Publishing Mobile App to AppStore
 
 ## Development server
 
