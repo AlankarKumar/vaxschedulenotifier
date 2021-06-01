@@ -7,11 +7,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Further Features
 
 1. Making the website responsive
-2. Adding Search By Pin Functionality
-3. Adding a Age Based Search Functionality
-4. Adding Dose 1 & Dose 2 availability
-5. Adding a Vaccine Type Search Functionality
-6. Adding a paid/ Free vaccine Search Functionality
+2. Enabling Notification on Mobiles
+3. SEO
+4. Adding Search By Pin Functionality
+5. Adding a Age Based Search Functionality
+6. Adding Dose 1 & Dose 2 availability
+7. Adding a Vaccine Type Search Functionality
+8. Adding a paid/ Free vaccine Search Functionality
+9. Multiple filter Subscription Support
 
 ## Development server
 
