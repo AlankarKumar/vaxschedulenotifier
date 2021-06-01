@@ -75,7 +75,7 @@ export class AppService {
       switchMap(() =>
         this.getCenterByDistrict(
           district_id,
-          `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`
+          `${date.getDate()}-${date.getMonth()+1}-${date.getFullYear()}`
         )
       ),
       switchMap((data: Center[]) => {
